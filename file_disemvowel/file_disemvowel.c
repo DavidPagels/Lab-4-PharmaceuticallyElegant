@@ -33,27 +33,24 @@ void disemvowel(FILE* inputFile, FILE* outputFile) {
 }
 
 int main(int argc, char *argv[]) {
-  FILE *inputFile;
-  FILE *outputFile;
+  FILE *inputFile = stdin;
+  FILE *outputFile = stdout;
+
   if(argc >= 2){ // if there is one or more arguments
     inputFile = fopen(argv[1], "r"); // open the input file
     if(inputFile == 0){
       printf("File did not open!");
       return 0;
     }
-    if(argc == 3){ // if there are 3 files
-      outputFile = fopen(argv[2], "w"); // open the output file
-      if(outputFile == 0){
-	printf("File did not open!");
-	return 0;
-      }
-      disemvowel(inputFile, outputFile);
+  }
+  if(argc == 3){ // if there are 3 files
+    outputFile = fopen(argv[2], "w"); // open the output file
+    if(outputFile == 0){
+      printf("File did not open!");
       return 0;
     }
-    disemvowel(inputFile, stdout);
-    return 0;
   }
-  disemvowel(stdin, stdout);
 
+  disemvowel(inputFile, outputFile);
   return 0;
 }
