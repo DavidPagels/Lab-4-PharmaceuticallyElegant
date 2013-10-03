@@ -43,4 +43,4 @@ testDisemvowelInfileOutFile()
 }
 
 # load shunit2
-. ~mcphee/pub/CSci3401/shunit2-2.1.5/src/shell/shunit2
+. /home/mcphee/pub/CSci3401/shunit2-2.1.5/src/shell/shunit2

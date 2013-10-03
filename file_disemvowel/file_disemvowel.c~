@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <ctype.h>
+
+#define BUF_SIZE 1024
+
+int is_vowel(char c) {
+  if(tolower(c) == 'a' || tolower(c) == 'e' || tolower(c) == 'i' || tolower(c) == 'o' || tolower(c) == 'u')
+  	return 1;
+  return 0; 
+}
+
+int copy_non_vowels(int num_chars, char* in_buf, char* out_buf) {
+  
+  /*
+   * Copy all the non-vowels from in_buf to out_buf. num_chars indicates how many
+   * characters are in in_buf, and this should return the number of non-vowels that
+   * that were copied over.
+   */
+}
+
+void disemvowel(FILE* inputFile, FILE* outputFile) {
+  char in_buf[BUF_SIZE];
+  fread(in_buf, sizeof(char), BUF_SIZE, inputFile);
+  printf("%s", in_buf);
+}
+
+int main(int argc, char *argv[]) {
+  FILE *inputFile;
+  FILE *outputFile;
+
+  inputFile = fopen(argv[1], 'w+');
+  //outputFile = fopen(argv[2], 'w+');
+  if(inputFile == 0) {
+        return 0;
+  }
+
+  disemvowel(inputFile, outputFile);
+
+  return 0;
+}
